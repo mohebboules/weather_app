@@ -3,7 +3,7 @@ import 'package:weather_app/views/home_view.dart';
 
 void main() {
   runApp(
-    MaterialApp(
+    const MaterialApp(
       debugShowCheckedModeBanner: false,
       home: HomeView(),
     ),

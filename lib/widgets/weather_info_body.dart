@@ -6,40 +6,38 @@ class WeatherInfoBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 16),
+      padding: const EdgeInsets.symmetric(horizontal: 24),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Text(
+          const Text(
             "Alexandria",
-            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24),
+            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 32),
           ),
-          Text("Updated at 23:46"),
-          SizedBox(
+          const Text("Updated at 23:46"),
+          const SizedBox(
             height: 8,
           ),
           Row(
-            mainAxisSize: MainAxisSize.min,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Image.asset("assets/images/cloudy.png"),
-              Spacer(),
-              Text(
+              const Text(
                 "17",
                 style: TextStyle(
                   fontSize: 24,
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              Spacer(),
-              Column(
+              const Column(
                 children: [Text("MaxTemp: 24"), Text("MinTemp: 16")],
               ),
             ],
           ),
-          SizedBox(
+          const SizedBox(
             height: 8,
           ),
-          Text(
+          const Text(
             "Light rain",
             style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
           )

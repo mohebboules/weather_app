@@ -7,7 +7,7 @@ class NoWeatherBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
+    return const Center(
       child: Text(
         "Their is no weather start searching now 🔍 ",
         style: TextStyle(

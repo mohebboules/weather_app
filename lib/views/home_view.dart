@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:weather_app/views/search_view.dart';
 import 'package:weather_app/widgets/weather_info_body.dart';
 // import 'package:weather_app/widgets/no_weather.dart';
 
@@ -10,16 +11,24 @@ class HomeView extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.blue,
+        foregroundColor: Colors.white,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
-        title: Text(
+        title: const Text(
           "Weather App",
-          style: TextStyle(
-            color: Colors.white,
-          ),
         ),
+        actions: [
+          IconButton(
+            onPressed: () {
+              Navigator.of(context).push(
+                MaterialPageRoute(builder: (context) => const SearchView()),
+              );
+            },
+            icon: const Icon(Icons.search),
+          )
+        ],
       ),
       // body: NoWeatherBody(),
-      body: WeatherInfoBody(),
+      body: const WeatherInfoBody(),
     );
   }
 }
