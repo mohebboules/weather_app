@@ -5,10 +5,11 @@ import 'package:weather_app/models/weather_model.dart';
 
 class WeatherInfoBody extends StatelessWidget {
   const WeatherInfoBody({super.key});
+
   @override
   Widget build(BuildContext context) {
     WeatherModel weatherModel =
-        BlocProvider.of<GetWeatherCubit>(context).weatherModel;
+        BlocProvider.of<GetWeatherCubit>(context).weatherModel!;
 
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 24),
