@@ -1,6 +1,6 @@
 class WeatherModel {
   final String cityName;
-  final String date;
+  final DateTime date;
   final String? image;
   final double temp;
   final double maxTemp;
@@ -19,7 +19,7 @@ class WeatherModel {
 
   factory WeatherModel.fromJson(json) {
     return WeatherModel(
-      date: json['current']['last_updated'],
+      date: DateTime.parse(json['current']['last_updated']),
       image: json['forecast']['forecastday'][0]['day']['condition']['icon'],
       temp: json['forecast']['forecastday'][0]['day']['avgtemp_c'],
       maxTemp: json['forecast']['forecastday'][0]['day']['maxtemp_c'],
@@ -28,5 +28,15 @@ class WeatherModel {
           ['text'],
       cityName: json['location']['name'],
     );
+  }
+
+  String imageFetch() {
+    if (image == null) {
+      return "https://archive.org/download/placeholder-image/placeholder-image.jpg";
+    } else if (image!.contains("https:")) {
+      return image!;
+    } else {
+      return "https:$image";
+    }
   }
 }
