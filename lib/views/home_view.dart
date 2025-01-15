@@ -14,7 +14,7 @@ class HomeView extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         foregroundColor: Colors.white,
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+        elevation: 50,
         title: const Text(
           "Weather App",
         ),
