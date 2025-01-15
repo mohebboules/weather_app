@@ -19,7 +19,7 @@ class SearchView extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 16),
         child: Center(
           child: TextField(
-            onSubmitted: (value) async {
+            onSubmitted: (value) {
               BlocProvider.of<GetWeatherCubit>(context)
                   .getWeather(cityName: value);
               Navigator.pop(context);
